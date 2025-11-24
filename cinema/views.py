@@ -58,7 +58,7 @@ class MovieSessionViewSet(viewsets.ModelViewSet):
             return MovieSessionDetailSerializer
         return MovieSessionSerializer
 
-    def get_queryset(self) -> QuerySet :
+    def get_queryset(self) -> QuerySet:
         if self.action == "list":
             return MovieSession.objects.select_related("movie", "cinema_hall")
         elif self.action == "retrieve":
